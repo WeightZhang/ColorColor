@@ -1,0 +1,38 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+
+// 1.判断是否为iOS7
+#define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+
+// 2.获得RGB颜色
+#define RGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+// 3.自定义Log
+#ifdef DEBUG
+#define IWLog(...) NSLog(__VA_ARGS__)
+#else
+#define IWLog(...)
+#endif
+
+// 4.是否为4inch
+#define fourInch ([UIScreen mainScreen].bounds.size.height == 568)
+//5.游戏模式
+typedef enum {kGameModeSolo,kGameModeWithFastCPU,kGameModeCliverCPU,kGameMode2P}GameMode;
+typedef enum {kMapSize6X8,kMapSize8X11,kMapSize12X16,kMapSize18X26}MapSize;
+#import "DataTool.h"
+#import "ColorTool.h"
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
