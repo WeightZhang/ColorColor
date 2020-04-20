@@ -10,6 +10,7 @@
 #import "SoundBtn.h"
 #import "HelpView.h"
 #import "AudioTool.h"
+#import "ImageTools.h"
 
 @interface MenuViewController ()
 - (IBAction)helpClick:(id)sender;
@@ -39,7 +40,7 @@
         self.quickStart.titleLabel.textColor = [UIColor blackColor];
         self.start.titleLabel.textColor = [UIColor blackColor];
     }
-
+    
 }
 
 - (void)viewWillLayoutSubviews{

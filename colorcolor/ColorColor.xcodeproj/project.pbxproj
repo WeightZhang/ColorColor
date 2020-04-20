@@ -19,6 +19,10 @@
 		58B32645194D9598001221DF /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B32644194D9598001221DF /* StartViewController.m */; };
 		58B32648194D9682001221DF /* SoundBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B32647194D9682001221DF /* SoundBtn.m */; };
 		58B3264B194D9941001221DF /* DataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3264A194D9941001221DF /* DataTool.m */; };
+		58B7B565244C2D370007D358 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58B7B564244C2D370007D358 /* Launch Screen.storyboard */; };
+		58B7B56B244C56840007D358 /* MapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B7B56A244C56840007D358 /* MapManager.m */; };
+		58B7B56D244C56A10007D358 /* piex.png in Resources */ = {isa = PBXBuildFile; fileRef = 58B7B56C244C56A10007D358 /* piex.png */; };
+		58B7B570244C584A0007D358 /* ImageTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B7B56F244C584A0007D358 /* ImageTools.m */; };
 		58BE9D3C194DD4C1004152D5 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58BE9D3B194DD4C1004152D5 /* BaseViewController.m */; };
 		58BE9D3F194DDA81004152D5 /* HelpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58BE9D3E194DDA81004152D5 /* HelpView.m */; };
 		58BE9D41194DDA96004152D5 /* HelpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58BE9D40194DDA96004152D5 /* HelpView.xib */; };
@@ -75,6 +79,12 @@
 		58B32647194D9682001221DF /* SoundBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundBtn.m; sourceTree = "<group>"; };
 		58B32649194D9941001221DF /* DataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTool.h; sourceTree = "<group>"; };
 		58B3264A194D9941001221DF /* DataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTool.m; sourceTree = "<group>"; };
+		58B7B564244C2D370007D358 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		58B7B569244C56830007D358 /* MapManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapManager.h; sourceTree = "<group>"; };
+		58B7B56A244C56840007D358 /* MapManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapManager.m; sourceTree = "<group>"; };
+		58B7B56C244C56A10007D358 /* piex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piex.png; sourceTree = "<group>"; };
+		58B7B56E244C584A0007D358 /* ImageTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageTools.h; sourceTree = "<group>"; };
+		58B7B56F244C584A0007D358 /* ImageTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageTools.m; sourceTree = "<group>"; };
 		58BE9D3A194DD4C1004152D5 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		58BE9D3B194DD4C1004152D5 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		58BE9D3D194DDA81004152D5 /* HelpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpView.h; sourceTree = "<group>"; };
@@ -132,29 +142,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		58357301194B422400E15067 /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Lib;
-			sourceTree = "<group>";
-		};
-		58357307194B531100E15067 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				58A47B07194DE9EE007D1EDD /* AudioTool.m */,
-				58A47B08194DE9EE007D1EDD /* AudioTool.h */,
-				58357308194B533C00E15067 /* ColorTool.h */,
-				58357309194B533C00E15067 /* ColorTool.m */,
-				58B32649194D9941001221DF /* DataTool.h */,
-				58B3264A194D9941001221DF /* DataTool.m */,
-			);
-			name = Other;
-			sourceTree = "<group>";
-		};
 		58502B75194C5D84003DF4F6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				58B7B56C244C56A10007D358 /* piex.png */,
 				58EFB8CB1944A5310042C67A /* ViewController.h */,
 				58EFB8CC1944A5310042C67A /* ViewController.m */,
 				58B32640194D9581001221DF /* MenuViewController.h */,
@@ -163,6 +154,8 @@
 				58B32644194D9598001221DF /* StartViewController.m */,
 				58BE9D3A194DD4C1004152D5 /* BaseViewController.h */,
 				58BE9D3B194DD4C1004152D5 /* BaseViewController.m */,
+				58B7B569244C56830007D358 /* MapManager.h */,
+				58B7B56A244C56840007D358 /* MapManager.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -184,6 +177,36 @@
 				58BE9D40194DDA96004152D5 /* HelpView.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		58B7B567244C4DA60007D358 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				58A47B0C194DEEEF007D1EDD /* soundOn.mp3 */,
+				58A47B03194DE9BE007D1EDD /* topSound.m4a */,
+				58A47B04194DE9BE007D1EDD /* bottomSound.m4a */,
+				58CDC83A19473112001E1D0F /* alert_pause_start.png */,
+				58CDC838194730FA001E1D0F /* game_bg.png */,
+				58CDC836194730CB001E1D0F /* menu_btn_help_normal@2x.png */,
+				58CDC832194730C2001E1D0F /* menu_btn_sound_off@2x.png */,
+				58CDC833194730C2001E1D0F /* menu_btn_sound_on@2x.png */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		58B7B568244C4DFC0007D358 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				58A47B07194DE9EE007D1EDD /* AudioTool.m */,
+				58A47B08194DE9EE007D1EDD /* AudioTool.h */,
+				58357308194B533C00E15067 /* ColorTool.h */,
+				58357309194B533C00E15067 /* ColorTool.m */,
+				58B32649194D9941001221DF /* DataTool.h */,
+				58B3264A194D9941001221DF /* DataTool.m */,
+				58B7B56E244C584A0007D358 /* ImageTools.h */,
+				58B7B56F244C584A0007D358 /* ImageTools.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		58EFB8AA1944A5300042C67A = {
@@ -219,13 +242,14 @@
 		58EFB8BC1944A5300042C67A /* ColorColor */ = {
 			isa = PBXGroup;
 			children = (
+				58B7B568244C4DFC0007D358 /* Tool */,
+				58B7B567244C4DA60007D358 /* Source */,
 				58502B75194C5D84003DF4F6 /* Controller */,
-				58357307194B531100E15067 /* Other */,
-				58357301194B422400E15067 /* Lib */,
 				5890DC0B1947428100C7897F /* View */,
 				58EFB8C51944A5310042C67A /* AppDelegate.h */,
 				58EFB8C61944A5310042C67A /* AppDelegate.m */,
 				58EFB8C81944A5310042C67A /* Main.storyboard */,
+				58B7B564244C2D370007D358 /* Launch Screen.storyboard */,
 				58EFB8CE1944A5310042C67A /* Images.xcassets */,
 				58EFB8BD1944A5300042C67A /* Supporting Files */,
 			);
@@ -236,14 +260,6 @@
 		58EFB8BD1944A5300042C67A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				58A47B0C194DEEEF007D1EDD /* soundOn.mp3 */,
-				58A47B03194DE9BE007D1EDD /* topSound.m4a */,
-				58A47B04194DE9BE007D1EDD /* bottomSound.m4a */,
-				58CDC83A19473112001E1D0F /* alert_pause_start.png */,
-				58CDC838194730FA001E1D0F /* game_bg.png */,
-				58CDC836194730CB001E1D0F /* menu_btn_help_normal@2x.png */,
-				58CDC832194730C2001E1D0F /* menu_btn_sound_off@2x.png */,
-				58CDC833194730C2001E1D0F /* menu_btn_sound_on@2x.png */,
 				58EFB8BE1944A5300042C67A /* ColorColor-Info.plist */,
 				58EFB8BF1944A5300042C67A /* InfoPlist.strings */,
 				58EFB8C21944A5300042C67A /* main.m */,
@@ -320,6 +336,7 @@
 				TargetAttributes = {
 					58EFB8B21944A5300042C67A = {
 						DevelopmentTeam = ZS56F4CC63;
+						LastSwiftMigration = 1130;
 					};
 					58EFB8D31944A5310042C67A = {
 						TestTargetID = 58EFB8B21944A5300042C67A;
@@ -357,11 +374,13 @@
 				58A47B05194DE9BE007D1EDD /* topSound.m4a in Resources */,
 				58357306194B42CD00E15067 /* OverView.xib in Resources */,
 				58CDC83B19473112001E1D0F /* alert_pause_start.png in Resources */,
+				58B7B565244C2D370007D358 /* Launch Screen.storyboard in Resources */,
 				58EFB8CF1944A5310042C67A /* Images.xcassets in Resources */,
 				58BE9D41194DDA96004152D5 /* HelpView.xib in Resources */,
 				58EFB8C11944A5300042C67A /* InfoPlist.strings in Resources */,
 				58EFB8CA1944A5310042C67A /* Main.storyboard in Resources */,
 				58CDC837194730CB001E1D0F /* menu_btn_help_normal@2x.png in Resources */,
+				58B7B56D244C56A10007D358 /* piex.png in Resources */,
 				58CDC834194730C2001E1D0F /* menu_btn_sound_off@2x.png in Resources */,
 				58CDC835194730C2001E1D0F /* menu_btn_sound_on@2x.png in Resources */,
 			);
@@ -389,9 +408,11 @@
 				58EFB8C31944A5300042C67A /* main.m in Sources */,
 				58B3264B194D9941001221DF /* DataTool.m in Sources */,
 				58BE9D3F194DDA81004152D5 /* HelpView.m in Sources */,
+				58B7B56B244C56840007D358 /* MapManager.m in Sources */,
 				58B32648194D9682001221DF /* SoundBtn.m in Sources */,
 				5835730A194B533C00E15067 /* ColorTool.m in Sources */,
 				58EFB8ED1944A54F0042C67A /* ColorButton.m in Sources */,
+				58B7B570244C584A0007D358 /* ImageTools.m in Sources */,
 				58B32645194D9598001221DF /* StartViewController.m in Sources */,
 				58B32642194D9581001221DF /* MenuViewController.m in Sources */,
 				58A47B09194DE9EE007D1EDD /* AudioTool.m in Sources */,
@@ -521,13 +542,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = ZS56F4CC63;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "洪水猛兽/ColorColor-Prefix.pch";
 				INFOPLIST_FILE = "洪水猛兽/ColorColor-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = ColorColor;
+				SWIFT_OBJC_BRIDGING_HEADER = "洪水猛兽/Tool/ColorColor-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -536,13 +562,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = ZS56F4CC63;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "洪水猛兽/ColorColor-Prefix.pch";
 				INFOPLIST_FILE = "洪水猛兽/ColorColor-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = ColorColor;
+				SWIFT_OBJC_BRIDGING_HEADER = "洪水猛兽/Tool/ColorColor-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

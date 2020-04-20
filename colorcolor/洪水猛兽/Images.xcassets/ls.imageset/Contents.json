@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "ls.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "btnColor2@2x.png",
       "scale" : "2x"
     },
     {

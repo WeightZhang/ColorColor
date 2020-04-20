@@ -12,7 +12,8 @@
 #import "ChangeColorButton.h"
 
 #import "HelpView.h"
-
+#import "ImageTools.h"
+#import "MapManager.h"
 
 #define kColorCount  6
 
@@ -20,7 +21,9 @@ typedef enum {kWhoTurns_1P,kWhoTurns_2P}WhoTurns;
 
 
 
-@interface ViewController ()<OverViewDelegate>
+@interface ViewController ()<OverViewDelegate>{
+    struct t_array array ;
+}
 
 @property (nonatomic,assign,getter = isWin) BOOL win;
 
@@ -62,6 +65,10 @@ typedef enum {kWhoTurns_1P,kWhoTurns_2P}WhoTurns;
 @property (nonatomic,assign) int colCount;   //列数---一共有几列
 @property (nonatomic,assign) int rowCount;  //行数----一共有几行
           
+
+
+
+@property(nonatomic,weak) MapManager *mapView;
 @end
 
 @implementation ViewController
@@ -83,7 +90,7 @@ typedef enum {kWhoTurns_1P,kWhoTurns_2P}WhoTurns;
 //----------------------
 - (void)viewDidLayoutSubviews{
 //    NSLog(@"viewDidLayoutSubviews");
-        self.map.bounds = CGRectMake(0, 0, 300, self.mapHeight);
+        self.map.bounds = CGRectMake(0, 0, self.view.bounds.size.width - 10*2, self.mapHeight);
 }
 
 - (void)viewDidLoad
@@ -96,10 +103,14 @@ typedef enum {kWhoTurns_1P,kWhoTurns_2P}WhoTurns;
     [self setupCountNum];
     
     [self setupBtnView:self.gameMode];
-    [self drawMap];
+//    [self drawMap];
+    MapManager* mapView = [MapManager createMapView:self.currentColor];
+    [self.view addSubview:mapView];
     
 //    UIButton *btn = [self.map.subviews lastObject];
 //    NSLog(@"btn.frame = %@",btn);
+    
+    
 }
 - (void)setupValue{
     //加载存储数据
@@ -115,6 +126,9 @@ typedef enum {kWhoTurns_1P,kWhoTurns_2P}WhoTurns;
     //初始化几行几列
 
     [self setRowColNum:data.mapRow:data.mapCol];
+    
+    //初始化图片模版
+    array = getBitImgColorsArrayWith(data.mapRow,data.mapCol);
     
     [self setupTipView:data.playTimes];
      data.playTimes++;
@@ -337,7 +351,17 @@ typedef enum {kWhoTurns_1P,kWhoTurns_2P}WhoTurns;
 
 
 #pragma mark----  map相关
+// 绘制像素画模版
+- (int)selectBtnColor:(int)row and:(int)col{
+    int lastNum = 5;
+    int val = array.imgMap[row][col];
+    if (val ==1) {
+        return lastNum;
+    }
+    return arc4random()%5;
+}
 - (void)drawMap{
+   
     
     CGFloat  marginY =2 ;
     CGFloat  marginX =2 ;
@@ -365,7 +389,9 @@ typedef enum {kWhoTurns_1P,kWhoTurns_2P}WhoTurns;
         btn.bounds= CGRectMake(0, 0, btnW, btnH);
         btn.frame = CGRectMake(btnX, btnY,btnW, btnH);
         
-        btn.colorNum = arc4random()%6;
+        
+        btn.colorNum = [self selectBtnColor:row and:col];
+        
         btn.backgroundColor = [self getColor:btn.colorNum];
         [self.map addSubview:btn];
         

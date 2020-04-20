@@ -150,8 +150,11 @@
 - (IBAction)clickStartBtn:(id)sender {
     DataTool *data =[DataTool sharedDataTool];
     data.gameMode = gameMode;
-    data.mapCol = mapCol;
-    data.mapRow = mapRow;
+//    data.mapCol = mapCol;
+//    data.mapRow = mapRow;
+    data.mapCol = 19;
+    data.mapRow = 19;
+    
     data.btnColor = color;
     data.mapSize = mapSize;
     [data saveDateToBundle];

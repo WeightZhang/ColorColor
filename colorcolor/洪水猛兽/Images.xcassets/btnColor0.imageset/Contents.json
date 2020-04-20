@@ -6,8 +6,12 @@
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "btnColor0@2x.png"
+      "filename" : "btnColor0@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
