@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EAE4434E-C0FC-4637-914C-F4E3B3058DEF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x6d2a;&#x6c34;&#x731b;&#x517d;/Tool/ImageTools.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "ImageTools"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "4D29C3AE-C715-493F-B610-7553A9F3BCDC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -30,8 +14,8 @@
             filePath = "&#x6d2a;&#x6c34;&#x731b;&#x517d;/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "-setupTipView:"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,9 +30,9 @@
             filePath = "&#x6d2a;&#x6c34;&#x731b;&#x517d;/MapManager.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "-getColor:"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "+getColor:from:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -62,9 +46,9 @@
             filePath = "&#x6d2a;&#x6c34;&#x731b;&#x517d;/MapManager.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "+createMapView:"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "+createMapViewWith:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

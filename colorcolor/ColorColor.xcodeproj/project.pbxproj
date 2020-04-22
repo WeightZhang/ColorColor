@@ -31,6 +31,8 @@
 		58CDC837194730CB001E1D0F /* menu_btn_help_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58CDC836194730CB001E1D0F /* menu_btn_help_normal@2x.png */; };
 		58CDC839194730FA001E1D0F /* game_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 58CDC838194730FA001E1D0F /* game_bg.png */; };
 		58CDC83B19473112001E1D0F /* alert_pause_start.png in Resources */ = {isa = PBXBuildFile; fileRef = 58CDC83A19473112001E1D0F /* alert_pause_start.png */; };
+		58E9B56C24507F19004C292B /* Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E9B56B24507F19004C292B /* Block.m */; };
+		58E9B56F245082A9004C292B /* MapConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E9B56E245082A9004C292B /* MapConfig.m */; };
 		58EFB8B71944A5300042C67A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EFB8B61944A5300042C67A /* Foundation.framework */; };
 		58EFB8B91944A5300042C67A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EFB8B81944A5300042C67A /* CoreGraphics.framework */; };
 		58EFB8BB1944A5300042C67A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EFB8BA1944A5300042C67A /* UIKit.framework */; };
@@ -95,6 +97,10 @@
 		58CDC836194730CB001E1D0F /* menu_btn_help_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_btn_help_normal@2x.png"; sourceTree = "<group>"; };
 		58CDC838194730FA001E1D0F /* game_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_bg.png; sourceTree = "<group>"; };
 		58CDC83A19473112001E1D0F /* alert_pause_start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alert_pause_start.png; sourceTree = "<group>"; };
+		58E9B56A24507F19004C292B /* Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
+		58E9B56B24507F19004C292B /* Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Block.m; sourceTree = "<group>"; };
+		58E9B56D245082A9004C292B /* MapConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapConfig.h; sourceTree = "<group>"; };
+		58E9B56E245082A9004C292B /* MapConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapConfig.m; sourceTree = "<group>"; };
 		58EFB8B31944A5300042C67A /* ColorColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58EFB8B61944A5300042C67A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58EFB8B81944A5300042C67A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -145,6 +151,7 @@
 		58502B75194C5D84003DF4F6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				58E9B56924507EE3004C292B /* Model */,
 				58B7B56C244C56A10007D358 /* piex.png */,
 				58EFB8CB1944A5310042C67A /* ViewController.h */,
 				58EFB8CC1944A5310042C67A /* ViewController.m */,
@@ -207,6 +214,17 @@
 				58B7B56F244C584A0007D358 /* ImageTools.m */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		58E9B56924507EE3004C292B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				58E9B56A24507F19004C292B /* Block.h */,
+				58E9B56B24507F19004C292B /* Block.m */,
+				58E9B56D245082A9004C292B /* MapConfig.h */,
+				58E9B56E245082A9004C292B /* MapConfig.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		58EFB8AA1944A5300042C67A = {
@@ -403,10 +421,12 @@
 			files = (
 				58EFB8CD1944A5310042C67A /* ViewController.m in Sources */,
 				58BE9D3C194DD4C1004152D5 /* BaseViewController.m in Sources */,
+				58E9B56F245082A9004C292B /* MapConfig.m in Sources */,
 				58EFB8C71944A5310042C67A /* AppDelegate.m in Sources */,
 				5890DC0E194742B100C7897F /* ChangeColorButton.m in Sources */,
 				58EFB8C31944A5300042C67A /* main.m in Sources */,
 				58B3264B194D9941001221DF /* DataTool.m in Sources */,
+				58E9B56C24507F19004C292B /* Block.m in Sources */,
 				58BE9D3F194DDA81004152D5 /* HelpView.m in Sources */,
 				58B7B56B244C56840007D358 /* MapManager.m in Sources */,
 				58B32648194D9682001221DF /* SoundBtn.m in Sources */,

@@ -10,14 +10,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-struct t_array {
+typedef struct t_array {
+    int row;
+    int col;
     int imgMap[19][19];
-};
+} MapArray;
 
 @interface ImageTools : NSObject
-+ (void)getBitImgColorsArrayWith:(int)row and:(int)col;
 
-struct t_array getBitImgColorsArrayWith(int row,int col);
++ (NSArray*)getBitImgColorsArray;
+
+/// 根据像素画绘制像素画二维数组
+MapArray getBitImgColorsArrayWith();
 
 @end
 

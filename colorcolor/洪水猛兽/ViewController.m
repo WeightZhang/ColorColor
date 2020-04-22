@@ -14,6 +14,7 @@
 #import "HelpView.h"
 #import "ImageTools.h"
 #import "MapManager.h"
+#import "MapConfig.h"
 
 #define kColorCount  6
 
@@ -22,7 +23,7 @@ typedef enum {kWhoTurns_1P,kWhoTurns_2P}WhoTurns;
 
 
 @interface ViewController ()<OverViewDelegate>{
-    struct t_array array ;
+    struct t_array mapArray ;
 }
 
 @property (nonatomic,assign,getter = isWin) BOOL win;
@@ -103,8 +104,16 @@ typedef enum {kWhoTurns_1P,kWhoTurns_2P}WhoTurns;
     [self setupCountNum];
     
     [self setupBtnView:self.gameMode];
-//    [self drawMap];
-    MapManager* mapView = [MapManager createMapView:self.currentColor];
+    
+    [self drawMap];
+    
+    MapConfig* config =  [MapConfig new];
+    config.size = CGSizeMake(300, 300);
+    config.colors = self.currentColor;
+    
+    UIView* mapView = [MapManager createMapViewWith:config];
+    
+    mapView.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
     [self.view addSubview:mapView];
     
 //    UIButton *btn = [self.map.subviews lastObject];
@@ -128,7 +137,7 @@ typedef enum {kWhoTurns_1P,kWhoTurns_2P}WhoTurns;
     [self setRowColNum:data.mapRow:data.mapCol];
     
     //初始化图片模版
-    array = getBitImgColorsArrayWith(data.mapRow,data.mapCol);
+//    mapArray = getBitImgColorsArrayWith(data.mapRow,data.mapCol);
     
     [self setupTipView:data.playTimes];
      data.playTimes++;
@@ -354,7 +363,7 @@ typedef enum {kWhoTurns_1P,kWhoTurns_2P}WhoTurns;
 // 绘制像素画模版
 - (int)selectBtnColor:(int)row and:(int)col{
     int lastNum = 5;
-    int val = array.imgMap[row][col];
+    int val = mapArray.imgMap[row][col];
     if (val ==1) {
         return lastNum;
     }

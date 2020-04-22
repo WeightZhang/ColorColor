@@ -8,6 +8,9 @@
 
 #import "ImageTools.h"
 
+//像素画，每个像素格子的像素数
+#define kPIX_WIDTH 15
+
 @implementation ImageTools
 /// 获取像素画图片颜色
 /// @param point 像素或坐标点
@@ -17,30 +20,39 @@
 
 /// 获取单色像素画着色位置数组
 /// @param count 图片平均分割数
-//+ (int *)getBitImgColorsArrayWith:(int)row and:(int)col{
-//    int imgMap[row][col];
-//    int **imgMapP = NULL;
-//    for(int i = 0;i < row;i++){
-//        for(int j = 0;j < col;j++){
-//            imgMap[i][j] = [self getMapNum:i and:j];
-//             NSLog(@"imgMap=%d | i=%d,j=%d",imgMap[i][j],i,j);
-//        }
-//    }
-//    int *p = NULL;
-//    return p;
-//}
++ (NSArray*)getBitImgColorsArray{
+    NSMutableArray* mapArray = [NSMutableArray array];
+    //根据像素画图片，计算行数和列数
+    UIImage* piexImg = [UIImage imageNamed:@"piex"];
+    float WH = piexImg.size.width;
+    int row = WH/kPIX_WIDTH;
+    int col = WH/kPIX_WIDTH;
+    for(int i = 0;i < row;i++){
+        for(int j = 0;j < col;j++){
+            [mapArray addObject:@([ImageTools getMapNum:i and:j])];
+            //             NSLog(@"imgMap=%d | i=%d,j=%d",array.imgMap[i][j],i,j);
+        }
+    }
+    return mapArray;
+}
 
 
-struct t_array getBitImgColorsArrayWith(int row,int col) {
-    struct t_array array;
+MapArray getBitImgColorsArray(){
+    //根据像素画图片，计算行数和列数
+    UIImage* piexImg = [UIImage imageNamed:@"piex"];
+    float WH = piexImg.size.width;
+    
+    int row = WH/kPIX_WIDTH;
+    int col = WH/kPIX_WIDTH;
+    MapArray array;
     for(int i = 0;i < row;i++){
         for(int j = 0;j < col;j++){
             array.imgMap[i][j] = [ImageTools getMapNum:i and:j];
-//             NSLog(@"imgMap=%d | i=%d,j=%d",array.imgMap[i][j],i,j);
+            //             NSLog(@"imgMap=%d | i=%d,j=%d",array.imgMap[i][j],i,j);
         }
     }
     
-return array;
+    return array;
 }
 //    struct t_thing thing = retArr();
 
@@ -61,15 +73,11 @@ return array;
 
 + (int)getMapNum:(int)row and:(int)col{
     UIImage* piexImg = [UIImage imageNamed:@"piex"];
-    NSUInteger count = 19;
-    float WH = piexImg.size.width;
-    int miniWH = WH/count;
- 
-    float selectX = miniWH/2.0 + col * miniWH;
-    float selectY = miniWH/2.0 + row * miniWH;
+    float selectX = kPIX_WIDTH/2.0 + col * kPIX_WIDTH;
+    float selectY = kPIX_WIDTH/2.0 + row * kPIX_WIDTH;
     UIColor* blockColor = [self colorAtPixel:CGPointMake(selectX, selectY) in:piexImg];
     NSLog(@"blockColor=%@ | row=%d,col=%d",blockColor,row,col);
-
+    
     CGColorRef cgColor = blockColor.CGColor;
     
     CIColor *ciColor = [CIColor colorWithCGColor:cgColor];
@@ -77,55 +85,52 @@ return array;
     CGFloat red = ciColor.red;
     
     NSLog(@"ciColor.alpha: %f", ciColor.alpha);
-//    CGFloat alpha =blockColor.CGColor;
-//    0.129412 / 0.521569 /
+    //    CGFloat alpha =blockColor.CGColor;
+    //    0.129412 / 0.521569 /
     if (alpha == 1 && red == 0 ) {
         return 1;
     }else{
         return 0;
     }
-
-    
-    
     
     return 0;
 }
 //获取图片某一点的颜色
 + (UIColor *)colorAtPixel:(CGPoint)point in:(UIImage*)image {
-     if (!CGRectContainsPoint(CGRectMake(0.0f, 0.0f, image.size.width, image.size.height), point)) {
-         return nil;
-     }
-     
-     NSInteger pointX = trunc(point.x);
-     NSInteger pointY = trunc(point.y);
-     CGImageRef cgImage = image.CGImage;
-     NSUInteger width = image.size.width;
-     NSUInteger height = image.size.height;
-     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-     int bytesPerPixel = 4;
-     int bytesPerRow = bytesPerPixel * 1;
-     NSUInteger bitsPerComponent = 8;
-     unsigned char pixelData[4] = { 0, 0, 0, 0 };
-     CGContextRef context = CGBitmapContextCreate(pixelData,
-                                                  1,
-                                                  1,
-                                                  bitsPerComponent,
-                                                  bytesPerRow,
-                                                  colorSpace,
-                                                  kCGImageAlphaPremultipliedLast |     kCGBitmapByteOrder32Big);
-     CGColorSpaceRelease(colorSpace);
-     CGContextSetBlendMode(context, kCGBlendModeCopy);
-     
-     CGContextTranslateCTM(context, -pointX, pointY-(CGFloat)height);
-     CGContextDrawImage(context, CGRectMake(0.0f, 0.0f, (CGFloat)width, (CGFloat)height), cgImage);
-     CGContextRelease(context);
-     
-     CGFloat red   = (CGFloat)pixelData[0] / 255.0f;
-     CGFloat green = (CGFloat)pixelData[1] / 255.0f;
-     CGFloat blue  = (CGFloat)pixelData[2] / 255.0f;
-     CGFloat alpha = (CGFloat)pixelData[3] / 255.0f;
-
-     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
- }
+    if (!CGRectContainsPoint(CGRectMake(0.0f, 0.0f, image.size.width, image.size.height), point)) {
+        return nil;
+    }
+    
+    NSInteger pointX = trunc(point.x);
+    NSInteger pointY = trunc(point.y);
+    CGImageRef cgImage = image.CGImage;
+    NSUInteger width = image.size.width;
+    NSUInteger height = image.size.height;
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    int bytesPerPixel = 4;
+    int bytesPerRow = bytesPerPixel * 1;
+    NSUInteger bitsPerComponent = 8;
+    unsigned char pixelData[4] = { 0, 0, 0, 0 };
+    CGContextRef context = CGBitmapContextCreate(pixelData,
+                                                 1,
+                                                 1,
+                                                 bitsPerComponent,
+                                                 bytesPerRow,
+                                                 colorSpace,
+                                                 kCGImageAlphaPremultipliedLast |     kCGBitmapByteOrder32Big);
+    CGColorSpaceRelease(colorSpace);
+    CGContextSetBlendMode(context, kCGBlendModeCopy);
+    
+    CGContextTranslateCTM(context, -pointX, pointY-(CGFloat)height);
+    CGContextDrawImage(context, CGRectMake(0.0f, 0.0f, (CGFloat)width, (CGFloat)height), cgImage);
+    CGContextRelease(context);
+    
+    CGFloat red   = (CGFloat)pixelData[0] / 255.0f;
+    CGFloat green = (CGFloat)pixelData[1] / 255.0f;
+    CGFloat blue  = (CGFloat)pixelData[2] / 255.0f;
+    CGFloat alpha = (CGFloat)pixelData[3] / 255.0f;
+    
+    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+}
 
 @end
